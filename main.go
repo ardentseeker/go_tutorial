@@ -5,6 +5,14 @@ import (
 	"log"
 )
 
+/*
+// set := make(map[string]bool)
+func check(x string, map_col map[string]int) bool {
+	_, exists := map_col[x]
+	return exists
+}
+*/
+
 func main() {
 	/*
 
@@ -116,10 +124,13 @@ func main() {
 		}
 	*/
 
-	//usage of slice
+	/*
 
-	var student = []string{"Divakar", "kittu", "Ravi", "Ajay", "Vijay"}
-	var marks = []int{90, 80, 70, 60, 50}
+		//usage of slice
+
+		var student = []string{"Divakar", "kittu", "Ravi", "Ajay", "Vijay"}
+		var marks = []int{90, 80, 70, 60, 50}
+	*/
 	/*
 		fmt.Println(student[0], "has scored", marks[0])
 		fmt.Println(student[1], "has scored", marks[1])
@@ -129,17 +140,46 @@ func main() {
 	*/
 
 	//use of for loop to iterate over slices
-	for i := 0; i < len(student); i++ {
-		fmt.Println(student[i], "has scored", marks[i])
+
+	/*
+			Need	Use	Why
+		Need both index and value	for i, v := range slice	Most common, cleanest
+		Only need value	for _, v := range slice	Avoid unused variable
+		Only need index	for i := range slice	Fastest way to get just index
+
+	*/
+
+	/*
+
+		for i := 0; i < len(student); i++ {
+			fmt.Println(student[i], "has scored", marks[i])
+		}
+		log.Println("--------------")
+		//use of for range loop to iterate over slices
+		for i := range student {
+			fmt.Println(student[i], "has scored", marks[i])
+		}
+		//use of for range loop in another way
+		log.Println("--------------")
+		for i, name := range student {
+			fmt.Println(name, "has scored", marks[i])
+		}
+
+	*/
+
+	// MAP in GO
+	age := map[string]int{
+		"Divakar": 21,
+		"Kittu":   22,
+		"Ravi":    23,
+		"Ajay":    24,
+		"Vijay":   25,
 	}
+	for name, age := range age {
+		fmt.Println(name, "is", age, "years old")
+	}
+	//using map like set
 	log.Println("--------------")
-	//use of for range loop to iterate over slices
-	for i := range student {
-		fmt.Println(student[i], "has scored", marks[i])
-	}
-	//use of for range loop in another way
-	log.Println("--------------")
-	for i, name := range student {
-		fmt.Println(name, "has scored", marks[i])
-	}
+	_, has := age["Div"]
+	fmt.Println("Is Div present in map?", has)
 }
