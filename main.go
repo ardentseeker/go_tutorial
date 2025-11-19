@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
 func main() {
@@ -51,10 +50,31 @@ func main() {
 		}
 	*/
 
-	fruits := []int{10, 20, 30, 40, 50}
-	for i := range fruits {
-		fmt.Println("this is no ", fruits[i])
-		fmt.Println(reflect.TypeOf(fruits))
-	}
+	// this is a method of printing datat type
+	/*
+		fruits := []int{10, 20, 30, 40, 50}
+		for i := range fruits {
+			fmt.Println("this is no ", fruits[i])
+			fmt.Println(reflect.TypeOf(fruits))
+		}
+	*/
+	/*
+		// use of pointer
+		a := 42
+		b := &a
+		fmt.Println("value of a:", a)
+		fmt.Println("address of b:", *b)
+		*b = 21
+		fmt.Println("new value of b:", *b)
+	*/
+
+	// use of Array
+	var arr [5]int = [5]int{10, 20, 30, 40, 50}
+	var arr2 [5]int = arr
+
+	fmt.Println("Array:", arr2)
+	fmt.Println("Length of Array:", arr)
+	arr2[3] = 100
+	fmt.Println("Modified Array:", arr2)
 
 }
