@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"reflect"
+	"slices"
 )
 
 func main() {
@@ -67,14 +69,28 @@ func main() {
 		*b = 21
 		fmt.Println("new value of b:", *b)
 	*/
+	/*
+		// use of Array
+		var arr [5]int = [5]int{10, 20, 30, 40, 50}
+		var arr2 [5]int = arr
 
-	// use of Array
-	var arr [5]int = [5]int{10, 20, 30, 40, 50}
-	var arr2 [5]int = arr
+		fmt.Println("Array:", arr2)
+		fmt.Println("Length of Array:", arr)
+		arr2[3] = 100
+		fmt.Println("Modified Array:", arr2)
+	*/
+	var s = []int{10, 20, 30, 40, 50}
+	fmt.Println(reflect.TypeOf(s))
+	s = append(s, 60, 70, 80)
+	fmt.Println(s)
+	s = slices.DeleteFunc(s, func(v int) bool {
+		return v == 20 || v == 40 || v == 60
+	})
+	fmt.Println(s)
+	s = append(s, 90, 100)
+	fmt.Println(s)
 
-	fmt.Println("Array:", arr2)
-	fmt.Println("Length of Array:", arr)
-	arr2[3] = 100
-	fmt.Println("Modified Array:", arr2)
+	s = slices.Delete(s, 1, 4)
+	fmt.Println(s)
 
 }
