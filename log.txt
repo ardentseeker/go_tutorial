@@ -1,0 +1,16 @@
+[2025-01-12 09:45:10] INFO     System boot sequence initiated
+[2025-01-12 09:45:12] DEBUG    Loading kernel modules...
+[2025-01-12 09:45:13] INFO     Network interface eth0 initialized
+[2025-01-12 09:45:14] WARNING  Low disk space on /dev/sda1 (remaining: 1.2GB)
+[2025-01-12 09:45:17] INFO     Starting essential services...
+[2025-01-12 09:45:20] ERROR    Unable to start service: db-service (connection refused)
+[2025-01-12 09:45:22] DEBUG    Retrying database connection (attempt 1)
+[2025-01-12 09:45:23] DEBUG    Retrying database connection (attempt 2)
+[2025-01-12 09:45:25] INFO     Database connection established
+[2025-01-12 09:45:30] INFO     User login: admin from 192.168.1.40
+[2025-01-12 09:45:40] WARNING  High memory usage detected (92%)
+[2025-01-12 09:45:50] ERROR    Failed to read configuration file: /etc/app/config.yaml
+[2025-01-12 09:46:05] CRITICAL Kernel panic detected (segmentation fault in process 1023)
+[2025-01-12 09:46:10] INFO     System attempting recovery...
+[2025-01-12 09:46:15] DEBUG    Restoring backup kernel settings
+[2025-01-12 09:46:25] INFO     Recovery successful — system stabilized
