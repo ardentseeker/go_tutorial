@@ -94,25 +94,52 @@ func main() {
 		s = slices.Delete(s, 1, 4)
 		fmt.Println(s)
 	*/
-
-	//experiment with for loop
-	for i := 0; i < 10; i++ {
-		fmt.Print(i, " ")
-	}
-	log.Println("this that")
-
-	i := 0
-	for i < 10 {
-		fmt.Print(i, " ")
-		i++
-	}
-	log.Println("this that")
-	for {
-		if i <= 5 {
-			break
+	/*
+		//experiment with for loop
+		for i := 0; i < 10; i++ {
+			fmt.Print(i, " ")
 		}
-		fmt.Print(i, " ")
-		i--
-	}
+		log.Println("this that")
 
+		i := 0
+		for i < 10 {
+			fmt.Print(i, " ")
+			i++
+		}
+		log.Println("this that")
+		for {
+			if i <= 5 {
+				break
+			}
+			fmt.Print(i, " ")
+			i--
+		}
+	*/
+
+	//usage of slice
+
+	var student = []string{"Divakar", "kittu", "Ravi", "Ajay", "Vijay"}
+	var marks = []int{90, 80, 70, 60, 50}
+	/*
+		fmt.Println(student[0], "has scored", marks[0])
+		fmt.Println(student[1], "has scored", marks[1])
+		fmt.Println(student[2], "has scored", marks[2])
+		fmt.Println(student[3], "has scored", marks[3])
+		fmt.Println(student[4], "has scored", marks[4])
+	*/
+
+	//use of for loop to iterate over slices
+	for i := 0; i < len(student); i++ {
+		fmt.Println(student[i], "has scored", marks[i])
+	}
+	log.Println("--------------")
+	//use of for range loop to iterate over slices
+	for i := range student {
+		fmt.Println(student[i], "has scored", marks[i])
+	}
+	//use of for range loop in another way
+	log.Println("--------------")
+	for i, name := range student {
+		fmt.Println(name, "has scored", marks[i])
+	}
 }
