@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 )
 
 func main() {
@@ -226,5 +227,20 @@ func main() {
 	fmt.Println(ppl3)
 	ppl3.skills = append(ppl3.skills, "react")
 	fmt.Println(ppl3)
+
+	log.Println("--------------")
+	var name string
+	fmt.Println("Enter name to search:")
+	fmt.Scanln(&name)
+
+	pplSlice := []person{ppl1, ppl2, ppl3}
+
+	for i := 0; i < len(pplSlice); i++ {
+		if pplSlice[i].name == name {
+			fmt.Println("Person found:", pplSlice[i].name, "whose age is", pplSlice[i].age, "and skills are", pplSlice[i].skills)
+			return
+		}
+	}
+	fmt.Println("we are unable to find ", name)
 
 }
