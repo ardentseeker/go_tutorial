@@ -2,16 +2,7 @@ package main
 
 import (
 	"fmt"
-	"log"
 )
-
-/*
-// set := make(map[string]bool)
-func check(x string, map_col map[string]int) bool {
-	_, exists := map_col[x]
-	return exists
-}
-*/
 
 func main() {
 	/*
@@ -167,19 +158,73 @@ func main() {
 
 	*/
 
-	// MAP in GO
-	age := map[string]int{
-		"Divakar": 21,
-		"Kittu":   22,
-		"Ravi":    23,
-		"Ajay":    24,
-		"Vijay":   25,
+	/*
+
+		// MAP in GO
+		age := map[string]int{
+			"Divakar": 21,
+			"Kittu":   22,
+			"Ravi":    23,
+			"Ajay":    24,
+			"Vijay":   25,
+		}
+		for name, age := range age {
+			fmt.Println(name, "is", age, "years old")
+		}
+
+		// thisis a method to check about existence of key in map
+		func check(x string, map_col map[string]int) bool {
+			_, exists := map_col[x]
+			return exists
+		}
+
+
+		//using map like set to check about existence of key directly
+		log.Println("--------------")
+		_, has := age["Div"]
+		fmt.Println("Is Div present in map?", has)
+	*/
+	/*
+		var m map[int]int
+
+		fmt.Println(m) // true
+
+		m = map[int]int{
+			1: 100,
+			2: 200,
+			3: 300,
+		}
+		fmt.Println(m[2])
+		delete(m, 2)
+		fmt.Println(m)
+		m[2] = 400
+		m[4] = 500
+		fmt.Println(m)
+		v, ok := m[5]
+		fmt.Println(v, ok)
+		_, ok = m[3]
+		fmt.Println(ok)
+	*/
+
+	//use of struct in go
+
+	type person struct {
+		name   string
+		age    int
+		skills []string
 	}
-	for name, age := range age {
-		fmt.Println(name, "is", age, "years old")
+	ppl1 := person{
+		name:   "Divakar",
+		age:    21,
+		skills: []string{"golang", "python", "java"},
 	}
-	//using map like set
-	log.Println("--------------")
-	_, has := age["Div"]
-	fmt.Println("Is Div present in map?", has)
+	ppl2 := person{"Kittu", 22, []string{"c++", "c", "java"}}
+	ppl3 := person{"Bittu", 24, []string{"html", "css", "js"}}
+
+	fmt.Println(ppl1)
+	fmt.Println(ppl2)
+	fmt.Println(ppl3)
+	ppl3.skills = append(ppl3.skills, "react")
+	fmt.Println(ppl3)
+
 }
