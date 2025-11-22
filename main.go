@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 )
 
 func main() {
@@ -207,40 +206,71 @@ func main() {
 		fmt.Println(ok)
 	*/
 
-	//use of struct in go
+	/*
+		//use of struct in go
 
-	type person struct {
+		type person struct {
+			name   string
+			age    int
+			skills []string
+		}
+		ppl1 := person{
+			name:   "Divakar",
+			age:    21,
+			skills: []string{"golang", "python", "java"},
+		}
+		ppl2 := person{"Kittu", 22, []string{"c++", "c", "java"}}
+		ppl3 := person{"Bittu", 24, []string{"html", "css", "js"}}
+
+		fmt.Println(ppl1)
+		fmt.Println(ppl2)
+		fmt.Println(ppl3)
+		ppl3.skills = append(ppl3.skills, "react")
+		fmt.Println(ppl3)
+
+		log.Println("--------------")
+		var name string
+		fmt.Println("Enter name to search:")
+		fmt.Scanln(&name)
+
+		pplSlice := []person{ppl1, ppl2, ppl3}
+
+		for i := 0; i < len(pplSlice); i++ {
+			if pplSlice[i].name == name {
+				fmt.Println("Person found:", pplSlice[i].name, "whose age is", pplSlice[i].age, "and skills are", pplSlice[i].skills)
+				return
+			}
+		}
+		fmt.Println("we are unable to find ", name)
+
+	*/
+
+	type quality struct {
 		name   string
 		age    int
 		skills []string
 	}
-	ppl1 := person{
-		name:   "Divakar",
-		age:    21,
-		skills: []string{"golang", "python", "java"},
-	}
-	ppl2 := person{"Kittu", 22, []string{"c++", "c", "java"}}
-	ppl3 := person{"Bittu", 24, []string{"html", "css", "js"}}
-
-	fmt.Println(ppl1)
-	fmt.Println(ppl2)
-	fmt.Println(ppl3)
-	ppl3.skills = append(ppl3.skills, "react")
-	fmt.Println(ppl3)
-
-	log.Println("--------------")
-	var name string
-	fmt.Println("Enter name to search:")
-	fmt.Scanln(&name)
-
-	pplSlice := []person{ppl1, ppl2, ppl3}
-
-	for i := 0; i < len(pplSlice); i++ {
-		if pplSlice[i].name == name {
-			fmt.Println("Person found:", pplSlice[i].name, "whose age is", pplSlice[i].age, "and skills are", pplSlice[i].skills)
-			return
+	var no_of_std int
+	fmt.Println("enter no of stds")
+	fmt.Scanln(&no_of_std)
+	var stds_List []quality
+	for i := 0; i < no_of_std; i++ {
+		var stds quality
+		fmt.Println("enter std name")
+		fmt.Scanln(&stds.name)
+		fmt.Println("enter std age")
+		fmt.Scanln(&stds.age)
+		var no_of_skills int
+		fmt.Println("enter no of skills")
+		fmt.Scanln(&no_of_skills)
+		for j := 0; j < no_of_skills; j++ {
+			var skill string
+			fmt.Println("enter skill")
+			fmt.Scanln(&skill)
+			stds.skills = append(stds.skills, skill)
 		}
+		stds_List = append(stds_List, stds)
 	}
-	fmt.Println("we are unable to find ", name)
+	fmt.Println(stds_List)
 
 }
